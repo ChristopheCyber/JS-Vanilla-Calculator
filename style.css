@@ -1,0 +1,139 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+h1{
+  font-size: 25px;
+  color: rgb(29, 175, 0);
+  text-shadow: 1.5px 1.5px 1px #000000;
+}
+
+.container{
+  align-items: center;
+  text-align: center;
+  width: 400px;
+}
+
+.calculator {
+  background: white;
+  /* width: 400px; */
+  border-radius: 12px;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 40px;
+}
+
+/* Display */
+.output-screen {
+  background: black;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 10px 10px 0 0;
+  max-width: 100%;
+}
+
+.output-screen h1 {
+  margin: 0;
+  padding: 25px 10px 15px 0;
+  font-size: 35px;
+  font-family: "Lucida Console", sans-serif;
+  font-weight: 100;
+  overflow-x: auto;
+}
+/* Buttons */
+.operating-buttons {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4,minmax(80px, 1fr));
+  /* grid-template-columns: repeat(4, 1fr); */
+  padding: 10px;
+}
+
+button {
+  min-height: 50px;
+  font-size: 20px;
+  font-weight: 100;
+  border: none;
+  background: rgb(200, 200, 200);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus {
+  outline: none;
+}
+
+.operator {
+  background: rgb(13, 206, 87);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+.function, .funct{
+  background: rgb(0, 117, 153);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+.const {
+  background:rgb(153, 153, 153);
+  color: rgb(5, 2, 153);
+  font-size: 30px;
+}
+
+.clear {
+  background: rgb(255, 40, 40);
+  color: white;
+}
+
+.clear:hover {
+  filter: brightness(90%);
+}
+
+.equal-sign {
+  /* grid-column: -2; */
+  /* grid-column-start: 4; grid-column-end: 4; */
+  grid-column: 4/4;
+  /* grid-row-start:4; grid-row-end:7; */
+  /* grid-row: 4/7; */
+  grid-row: 7 / span 2;
+  background: rgb(13, 206, 87);
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
