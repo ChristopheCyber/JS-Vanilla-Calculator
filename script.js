@@ -5,6 +5,8 @@ const clearBtn = document.getElementById('clear-btn');
 let firstValue = 0;
 let operatorValue = '';
 let awaitingNextValue = false;
+//for keeping operating calculation after function +/- pressed
+let keepOperating = false;
 
 function sendNumberValue(number) {
   // Replace current display value if first value is entered
@@ -70,7 +72,8 @@ function useFunction(funct) {
         calculatorDisplay.textContent = Math.round(Math.tan(x) * Math.pow(10,15))/ Math.pow(10,15);
       break;
     case "Sign":
-        calculatorDisplay.textContent = (-x);
+        {calculatorDisplay.textContent = (-x);
+        keepOperating = true;}
       break;
     case "Rand":
         calculatorDisplay.textContent = Math.round(Math.random() * Math.pow(10,15))/ Math.pow(10,15);
@@ -103,8 +106,9 @@ function useConst(constante) {
 
 function useOperator(operator) {
   const currentValue = Number(calculatorDisplay.textContent);
+  console.log("useOperator: operator =",operator,"; currentValue =",currentValue);
   // Prevent multiple operators
-  if (operatorValue && awaitingNextValue) {
+  if (operatorValue && awaitingNextValue && !keepOperating) {
     operatorValue = operator;
     return;
   }
@@ -117,8 +121,10 @@ function useOperator(operator) {
     firstValue = calculation;
   }
   // Ready for next value, store operator
-  awaitingNextValue = true;
-  operatorValue = operator;
+  if (!keepOperating) {
+    awaitingNextValue = true;
+    operatorValue = operator;
+  }
 }
 
 // Add Event Listeners for numbers, operators, decimal
@@ -141,6 +147,7 @@ function resetAll() {
   firstValue = 0;
   operatorValue = '';
   awaitingNextValue = false;
+  keepOperating = false;
   calculatorDisplay.textContent = '0';
 }
 

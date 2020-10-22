@@ -12,24 +12,40 @@ body {
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
 }
 
-h1{
-  font-size: 25px;
-  color: rgb(29, 175, 0);
-  text-shadow: 1.5px 1.5px 1px #000000;
+h1 {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  text-shadow: 1.5px 1.5px 1px #504f4f;
 }
 
-.container{
+.container {
   align-items: center;
   text-align: center;
   width: 400px;
 }
 
 .calculator {
-  background: white;
   /* width: 400px; */
   border-radius: 12px;
-  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  /*  import  */
+  background-color: #909090;
+  border-right: 1px groove#909090;
+  border-bottom: 1px groove#909090;
+  border-left: 1px groove#909090;
+  border-top: 1px groove#909090;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  /* box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6); */
+  box-shadow: 10px 10px 20px 3px #232323, inset 10px 10px 20px 3px #ececec,
+    inset -10px -10px 20px -3px #0e0e0e;
+  /* justify-content: stretch; */
+  /* align-items: center;
+  align-content: center; */
+  /* height: 27rem; */
+  padding: 1.2rem 16px 2rem 16px;
+  /* margin: 5rem; */
 }
 
 /* Display */
@@ -40,23 +56,28 @@ h1{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 4px 4px;
   max-width: 100%;
+  margin: 0 5px 0 10px;
 }
 
 .output-screen h1 {
   margin: 0;
   padding: 25px 10px 15px 0;
-  font-size: 35px;
+  font-size: 33px;
   font-family: "Lucida Console", sans-serif;
   font-weight: 100;
   overflow-x: auto;
+  color: rgb(250, 250, 250);
+  text-shadow: 1.5px 1.5px 1px #000000;
+  color: rgb(29, 175, 0);
+  text-shadow: 1.5px 1.5px 1px #000000;
 }
 /* Buttons */
 .operating-buttons {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(4,minmax(80px, 1fr));
+  grid-template-columns: repeat(4, minmax(80px, 1fr));
   /* grid-template-columns: repeat(4, 1fr); */
   padding: 10px;
 }
@@ -69,6 +90,20 @@ button {
   background: rgb(200, 200, 200);
   border-radius: 5px;
   cursor: pointer;
+  /*    */
+  border-top: 1px groove Gainsboro;
+  border-right: 1px groove Gainsboro;
+  border-bottom: 1px groove Gainsboro;
+  border-left: 1px groove Gainsboro;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px DimGrey, inset 1px 1px 2px 1px WhiteSmoke,
+    inset -1px -1px 2px 1px DimGrey;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
 }
 
 button:hover {
@@ -76,7 +111,7 @@ button:hover {
 }
 
 button:active {
-  transform: translateY(1px);
+  transform: translateY(2px);
 }
 
 button:focus {
@@ -86,17 +121,18 @@ button:focus {
 .operator {
   background: rgb(13, 206, 87);
   color: rgb(0, 0, 0);
-  font-size: 30px;
+  font-size: 21px;
 }
-.function, .funct{
+.function,
+.funct {
   background: rgb(0, 117, 153);
   color: rgb(0, 0, 0);
-  font-size: 30px;
+  font-size: 21px;
 }
 .const {
-  background:rgb(153, 153, 153);
+  background: rgb(153, 153, 153);
   color: rgb(5, 2, 153);
-  font-size: 30px;
+  font-size: 21px;
 }
 
 .clear {
