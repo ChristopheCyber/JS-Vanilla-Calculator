@@ -152,6 +152,7 @@ button:focus {
   grid-column: 4/4;
   /* grid-row-start:4; grid-row-end:7; */
   /* grid-row: 4/7; */
+  max-height: none;
   grid-row: 7 / span 2;
   background: rgb(13, 206, 87);
 }
