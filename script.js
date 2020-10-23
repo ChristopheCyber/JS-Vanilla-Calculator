@@ -4,9 +4,11 @@ const clearBtn = document.getElementById('clear-btn');
 
 let firstValue = 0;
 let operatorValue = '';
+let lastOperator = '';
 let awaitingNextValue = false;
 //for keeping operating calculation after function +/- pressed
 let keepOperating = false;
+let memoryStore = 0;
 
 function sendNumberValue(number) {
   // Replace current display value if first value is entered
@@ -47,6 +49,28 @@ const calculate = {
   'Pow': (firstNumber, secondNumber) => (Math.pow(firstNumber, secondNumber)),
 };
 
+function manageMemory(funct) {
+  const x = Number(calculatorDisplay.textContent);
+  awaitingNextValue = true;
+  switch (funct) {
+    case "M+":
+      memoryStore += x;
+      break;
+    case "M-":
+      memoryStore -= x;
+      break;
+    case "MC":
+      memoryStore = 0;
+      break;
+    case "MR":
+      {
+        calculatorDisplay.textContent = memoryStore;
+        keepOperating = true;
+        break;
+      }
+  }
+}
+
 function useFunction(funct) {
   const x = Number(calculatorDisplay.textContent);
   awaitingNextValue = true;
@@ -80,6 +104,7 @@ function useFunction(funct) {
       break;
     case "Rand":
       calculatorDisplay.textContent = Math.round(Math.random() * Math.pow(10, 15)) / Math.pow(10, 15);
+      keepOperating = true;
       break;
     case "1/":
       calculatorDisplay.textContent = Math.round(1 / (x) * Math.pow(10, 15)) / Math.pow(10, 15);
@@ -94,6 +119,7 @@ function useFunction(funct) {
 }
 
 function useConst(constante) {
+  keepOperating = true;
   awaitingNextValue = true;
   switch (constante) {
     case "PI":
@@ -108,6 +134,9 @@ function useConst(constante) {
 }
 
 function useOperator(operator) {
+  (operator === 'Enter' || operator === '=')
+    ? null
+    : (lastOperator = operator);
   const currentValue = Number(calculatorDisplay.textContent);
   // Prevent multiple operators
   if (operatorValue && awaitingNextValue && !keepOperating) {
@@ -118,7 +147,8 @@ function useOperator(operator) {
   if (!firstValue) {
     firstValue = currentValue;
   } else {
-    const calculation = calculate[operatorValue](firstValue, currentValue);
+    // const calculation = calculate[operatorValue](firstValue, currentValue);
+    const calculation = calculate[lastOperator](firstValue, currentValue);
     calculatorDisplay.textContent = calculation;
     firstValue = calculation;
   }
@@ -141,6 +171,8 @@ inputBtns.forEach((inputBtn) => {
     inputBtn.addEventListener('click', () => useConst(inputBtn.value));
   } else if (inputBtn.classList.contains('decimal')) {
     inputBtn.addEventListener('click', () => addDecimal());
+  } else if (inputBtn.classList.contains('memory')) {
+    inputBtn.addEventListener('click', () => manageMemory(inputBtn.value));
   }
 });
 
@@ -180,18 +212,11 @@ function logKey(e) {
         }
       // Enter
       case 'Enter':
+        // case '=':
         {
           useOperator(e.key);
           break;
         }
-      /* 
-      // =
-      case '=':
-        {
-          useOperator(e.key);
-          break;
-        } 
-      */
       // Only numbers.
       //('|| {}' for avoidning .input on null error)
       case (e.key.match(/\d/) || {}).input:
