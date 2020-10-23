@@ -64,7 +64,7 @@ h1 {
 .output-screen h1 {
   margin: 0;
   padding: 25px 10px 15px 0;
-  font-size: 33px;
+  font-size: 30px;
   font-family: "Lucida Console", sans-serif;
   font-weight: 100;
   overflow-x: auto;
@@ -107,15 +107,12 @@ button {
     inset -1px -1px 2px 1px DimGrey;
   text-align: center;
 }
-
 button:hover {
   filter: brightness(110%);
 }
-
 button:active {
   transform: translateY(2px);
 }
-
 button:focus {
   outline: none;
 }
@@ -152,8 +149,8 @@ button:focus {
   grid-column: 4/4;
   /* grid-row-start:4; grid-row-end:7; */
   /* grid-row: 4/7; */
-  max-height: none;
   grid-row: 7 / span 2;
+  max-height: none;
   background: rgb(13, 206, 87);
 }
 /* Custom Scrollbar */
@@ -161,13 +158,13 @@ button:focus {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgb(141, 141, 141);
 }
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgb(93, 93, 93);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgb(100, 100, 100);
 }
 
 /* Media Query: Large Smartphone (Vertical) */
