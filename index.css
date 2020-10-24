@@ -27,7 +27,7 @@ h1 {
 }
 
 .calculator {
-  background: url('../CyberEngine1.jpg') fixed top left;
+  background: url('./CyberEngine1.jpg') fixed top left;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
