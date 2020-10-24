@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Calculator demo</title> 
+    <title>JS Calculator demo</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon-32-calc.png" />
     <!-- Font Awesome Ajax Library / free Icons on ContentDeliveryNetworrk for JS cdnjs.com -->
@@ -12,12 +12,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./particules/particules.css">
   </head>
   <!--   -->
   <body>
-    <div class="container">
+      <div class="container" >
       <div class="calculator">
-        <h1><i class="fas fa-calculator"></i>  CALCULATOR <i class="fas fa-square-root-alt"></i><br>by Schlienger C.</h1>
+        <h1>
+          <i class="fas fa-calculator"></i> CALCULATOR
+          <i class="fas fa-square-root-alt"></i><br />by Schlienger C.
+        </h1>
         <!-- Display -->
         <div class="output-screen">
           <h1>0</h1>
@@ -56,13 +60,137 @@
           <button value="2">2</button>
           <button value="3">3</button>
           <button value="0">0</button>
-          <button class="decimal" value=".">.</button>
+          <button class="decimal" value=".">dec.</button>
           <button class="clear" id="clear-btn">C</button>
           <button class="equal-sign operator" value="=">=</button>
         </div>
       </div>
     </div>
-    <!-- Script -->
+    <!-- Scripts -->
+    <!-- Calculator -->
     <script src="script.js"></script>
+    <!-- Particules -->
+    <div id="particles-js">
+      <!-- <script src="../js/particles.js"> </script> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <!--<script src="https://cdn.sstatic.net/Js/stub.en.js?v=5644a8d6458d"></script>-->
+
+      <!-- Particules -->
+      <script>
+        (function () {
+          var config = {
+            particles: {
+              number: {
+                value: 150,
+                density: {
+                  enable: true,
+                  value_area: 750,
+                },
+              },
+              color: {
+                value: "#000000",
+              },
+              shape: {
+                type: "circle",
+                stroke: {
+                  width: 3,
+                  color: "#47e851",
+                },
+                polygon: {
+                  nb_sides: 6,
+                },
+                image: {
+                  width: 200,
+                  height: 200,
+                },
+              },
+              opacity: {
+                value: 0.5,
+                random: false,
+                anim: {
+                  enable: false,
+                  speed: 1.5,
+                  opacity_min: 0.1,
+                  sync: false,
+                },
+              },
+              size: {
+                value: 3,
+                random: true,
+                anim: {
+                  enable: false,
+                  speed: 10,
+                  size_min: 15,
+                  sync: false,
+                },
+              },
+              line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#48d5e8",
+                opacity: 0.85,
+                width: 1.5,
+              },
+              move: {
+                enable: true,
+                speed: 1.5,
+                direction: "top",
+                random: true,
+                straight: true,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                  enable: false,
+                  rotateX: 600,
+                  rotateY: 1200,
+                },
+              },
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+                resize: true,
+              },
+              modes: {
+                grab: {
+                  distance: 250,
+                  line_linked: {
+                    opacity: 1,
+                  },
+                },
+                bubble: {
+                  distance: 400,
+                  size: 40,
+                  duration: 2,
+                  opacity: 8,
+                  speed: 3,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
+                },
+                push: {
+                  particles_nb: 4,
+                },
+                remove: {
+                  particles_nb: 2,
+                },
+              },
+            },
+            retina_detect: true,
+          };
+          // API ParticulesJS loaded from jQuery AJAX library:
+          $(window).load(function () {
+            particlesJS("particles-js", config);
+          });
+        })();
+      </script>
+    </div>
+    <!-- particles.js lib (JavaScript CodePen settings): https://github.com/VincentGarreau/particles.js -->
   </body>
 </html>

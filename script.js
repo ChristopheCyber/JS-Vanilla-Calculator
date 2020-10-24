@@ -242,7 +242,7 @@ function logKey(e) {
     }
   } else {
     // Log input for troubleshooting incorrect data.
-    console.log('Keyboard input key = \'', e.key, '\' is not supported for this calculator.\nPlease use numbers 0-9; operators + - * /; decimal point . ; Enter or =, or clic buttons displayed.');
-    alert('Keyboard key = \' ' + e.key + ' \' is not supported for this calculator.\nUse numbers 0-9; operators + - * /; decimal point . ; Enter or =\nOr clic buttons displayed.');
+    console.log('Keyboard input key = \'', e.key, '\' is not supported by this calculator.\nPlease use numbers 0-9; operators + - * /; decimal point . ; Enter or =, or clic buttons displayed.');
+    alert('Keyboard key = \' ' + e.key + ' \' is not supported by this calculator.\nUse numbers 0-9; operators + - * /; decimal point . ; Enter or =\nOr clic buttons displayed.');
   }
 };

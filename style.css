@@ -14,22 +14,28 @@ body {
 
 h1 {
   font-size: 20px;
-  color: rgb(0, 0, 0);
-  text-shadow: 1.5px 1.5px 1px #504f4f;
+  color:  #08e4f5;
+  text-shadow: 2px 2px 1px  rgb(35, 59, 85);
+  font-weight: lighter;
 }
 
 .container {
   align-items: center;
   text-align: center;
   width: 400px;
+  z-index: +1;
 }
 
 .calculator {
+  background: url('../CyberEngine1.jpg') fixed top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
   /* width: 400px; */
   border-radius: 25px;
   /* margin-bottom: 40px; */
   /*  import  */
-  background-color: #909090;
+  background-color: #292929;
   border-right: 1px groove#909090;
   border-bottom: 1px groove#909090;
   border-left: 1px groove#909090;
@@ -50,15 +56,22 @@ h1 {
 
 /* Display */
 .output-screen {
-  background: black;
+  background: rgba(0, 0, 0, 0.67);
   color: white;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  border-radius: 8px 8px 4px 4px;
+  border: none;
+  border-radius: 10px 10px 4px 4px;
   max-width: 100%;
   margin: 0 5px 0 10px;
+  /* border: 1px groove rgba(24, 24, 24, 0.555); */
+  box-shadow: 
+    1px 1px 2px 0px DimGrey, 
+    inset 2px 0px 0px 0px rgb(0, 0, 0),
+    inset 0px 2px 1px 0px DimGrey
+    ;
 }
 
 .output-screen h1 {
@@ -68,9 +81,7 @@ h1 {
   font-family: "Lucida Console", sans-serif;
   font-weight: 100;
   overflow-x: auto;
-  color: rgb(250, 250, 250);
-  text-shadow: 1.5px 1.5px 1px #000000;
-  color: rgb(29, 175, 0);
+  color:rgba(0, 255, 43, 0.92);
   text-shadow: 1.5px 1.5px 1px #000000;
 }
 /* Buttons */
@@ -92,19 +103,25 @@ button {
   font-size: 20px;
   font-weight: 100;
   border: none;
-  background: rgb(200, 200, 200);
+  color: rgb(0, 255, 21);
+  text-shadow: 2px 3px .5px #000000;
+  background: none;
+  background-size: cover;
+  background-position: 50% 50%;
   border-radius: 5px;
   cursor: pointer;
   /*    */
-  border-top: 1px groove Gainsboro;
-  border-right: 1px groove Gainsboro;
-  border-bottom: 1px groove Gainsboro;
-  border-left: 1px groove Gainsboro;
+  border-top: 1px groove black;
+  border-right: 1px groove black;
+  border-bottom: 1px groove black;
+  border-left: 1px groove black;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
-  box-shadow: 1px 1px 2px 1px DimGrey, inset 1px 1px 2px 1px WhiteSmoke,
-    inset -1px -1px 2px 1px DimGrey;
+  /* box-shadow: 1px 1px 2px 1px DimGrey, inset 1px 1px 2px 1px WhiteSmoke,
+    inset -1px -1px 2px 1px DimGrey; */
+  box-shadow: 1px 1px 2px 1px rgb(0, 0, 0), inset 1px 1px 2px 1px rgb(29, 245, 40),
+    inset -1px -1px 2px 1px rgb(22, 253, 34);
   text-align: center;
 }
 button:hover {
@@ -122,6 +139,16 @@ button:focus {
   color: rgb(0, 0, 0);
   font-size: 21px;
 }
+.function, .operator, .const, .memory, .clear{
+  /*    */
+  border-top: 1px groove Gainsboro;
+  border-right: 1px groove Gainsboro;
+  border-bottom: 1px groove Gainsboro;
+  border-left: 1px groove Gainsboro;
+  box-shadow: 1px 1px 2px 1px DimGrey, inset 1px 1px 2px 1px WhiteSmoke,
+    inset -1px -1px 2px 1px DimGrey;
+  text-shadow: 1px 1px 1px #000000;
+  }
 .function,
 .funct {
   background: rgb(0, 117, 153);
